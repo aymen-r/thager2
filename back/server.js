@@ -40,6 +40,7 @@ app.use((err, req, res, next) => {
 // heroku upload
 
 app.use(express.static(path.join(__dirname, "/front/build")));
+
 app.get("*", (req, res) =>
   res.sendFile(path.join(__dirname, "/front/build/index.html"))
 );
