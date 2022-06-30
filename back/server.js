@@ -13,7 +13,7 @@ import path from "path";
 dotenv.config();
 
 mongoose
-  .connect(process.env.MONGODB_URI_ATLAS)
+  .connect(process.env.MONGODB_URI)
   .then(() => {
     console.log("connected to db success");
   })
