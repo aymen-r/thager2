@@ -1,0 +1,11 @@
+.offices {
+  display: flex;
+  color: white;
+  justify-content: space-between;
+}
+.main-office {
+  display: flex;
+  color: white;
+  justify-content: center;
+  padding-bottom: 3%;
+}

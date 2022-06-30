@@ -1,0 +1,10 @@
+.anime {
+  background: #1c1c1c;
+}
+.anime div {
+  width: 2rem;
+  height: 2rem;
+  margin-top: auto;
+  margin-bottom: auto;
+  mix-blend-mode: lighten;
+}

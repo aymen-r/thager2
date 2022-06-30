@@ -1,0 +1,22 @@
+{
+  "name": "filters-materialui-react-master",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd back && npm install --force && cd ../front && npm install --force && npm run build",
+    "start": "node backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aymen-r/thager-rafeedain.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aymen-r/thager-rafeedain/issues"
+  },
+  "homepage": "https://github.com/aymen-r/thager-rafeedain#readme"
+}

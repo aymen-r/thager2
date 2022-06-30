@@ -1,0 +1,133 @@
+.nav-bar {
+  width: 100%;
+  background-color: transparent;
+  height: 75px;
+  padding: 10px 0;
+  box-sizing: border-box;
+  border: none;
+}
+.nav-bar .navbar-list {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  list-style: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  /* letter-spacing: 2px; */
+  position: relative;
+}
+.nav-bar .navbar-list .navbar-item {
+  height: 100%;
+  /* width: 120px; */
+  float: left;
+  text-align: center;
+  color: white;
+  padding: 15px 0;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.nav-bar .navbar-list .navbar-item:last-child {
+  margin-right: 0;
+}
+.nav-bar .navbar-list .navbar-item:hover {
+  color: #ffce34;
+}
+.nav-bar .navbar-list .navbar-item:hover .mega-menu {
+  color: black;
+}
+
+/* mega menu */
+.mega-menu {
+  border-radius: 0 0 10px 10px;
+  position: absolute;
+  top: 65px;
+  left: 0;
+  width: 100%;
+  /* height: 250px; */
+  background: rgba(85, 85, 85, 0.95);
+  transition: 0.6s all ease;
+  box-sizing: border-box;
+  visibility: hidden;
+  opacity: 0;
+  padding: 2.5% 5%;
+}
+.inner-mega-menu {
+  text-align: left;
+  list-style: none;
+  /* width: 50%; */
+
+  /* margin: 2.5% 5%; */
+}
+.inner-mega-menu:last-child {
+  margin-right: 0%;
+}
+.inner-mega-menu .inner-item {
+  position: relative;
+  width: 40%;
+  padding: 10px 0;
+  color: black;
+  transition: 0.6s all ease;
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+.inner-mega-menu .inner-item p {
+  margin-left: 25px;
+}
+.inner-mega-menu .inner-item:hover {
+  color: #ffce34;
+}
+
+.nav-bar ul li:hover .mega-menu {
+  visibility: visible;
+  opacity: 1;
+  transition: 0.6s all ease-in-out;
+}
+
+.menu-image {
+  width: 3rem;
+  height: 3rem;
+  color: #ffce34;
+}
+
+.innermenu2 {
+  color: black;
+  list-style: none;
+  position: absolute;
+  left: 100%;
+  width: 200px;
+  top: 15px;
+  display: none;
+}
+.innermenu2-item {
+  padding: 10px;
+}
+.innermenu2-item:hover {
+  color: #ffce34;
+}
+.inner-item:hover > .innermenu2 {
+  display: block;
+}
+.right-arrow {
+  margin-left: 15px;
+}
+
+/* services */
+.inner-mega-menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.inner-mega-menu-item:hover {
+  color: #ffce34;
+  transition: all 0.6s ease;
+}
+.inner-mega-menu-item img {
+  width: 3rem;
+}
+.inner-mega-menu-item p {
+  margin-left: 20px;
+}

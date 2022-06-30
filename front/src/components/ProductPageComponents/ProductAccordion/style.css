@@ -1,0 +1,12 @@
+.acc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.acc-list li {
+  padding: 5px 25px;
+  cursor: pointer;
+}
+.acc-list li:hover {
+  background-color: rgb(212, 212, 212);
+}

@@ -1,0 +1,10 @@
+.map {
+  background-color: #1c1c1c;
+  display: flex;
+  justify-content: center;
+  height: 70vh;
+  padding: 0 10%;
+}
+.quote {
+  color: white;
+}

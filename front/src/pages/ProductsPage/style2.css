@@ -1,0 +1,24 @@
+.home {
+  height: 200vh;
+  background-color: rgb(177, 180, 180);
+  /* padding-top: 120px; */
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.carousel-products {
+  /* padding-top: 110px; */
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  background-color: black;
+  z-index: 2;
+}
+.container {
+  padding-left: 10%;
+  padding-right: 10%;
+}

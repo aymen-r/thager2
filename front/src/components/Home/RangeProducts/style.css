@@ -1,0 +1,60 @@
+.head-line2 {
+  font-weight: 300;
+  font-family: Oswald, "Times New Roman", Times, serif;
+  line-height: 1.2;
+  letter-spacing: 2px;
+}
+.prod-container {
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  /* justify-content: center; */
+  /* width: 100%; */
+  /* margin: 30px 10%;
+   padding: 0 10%; */
+}
+.category {
+  padding: 50px 0;
+}
+.css-1ujykiq-MuiButtonBase-root-MuiTab-root {
+  font-size: 1.5rem !important;
+}
+/* .css-1ujykiq-MuiButtonBase-root-MuiTab-root.Mui-selected {
+  color: #ff7004 !important;
+} */
+.more-accessories {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding: 50px 0px;
+}
+.more-accessories p {
+  /* flex: 3; */
+  padding-right: 6%;
+}
+.more-accessories button {
+  /* flex: 1; */
+  padding: 15px 25px;
+  /* margin: 0 20px; */
+  display: inline-block;
+  text-align: center;
+  padding: 17px 20px;
+  border-radius: 0px;
+  line-height: 1;
+  border: 0px;
+  width: 30%;
+  transition: all 0.4s ease 0s;
+  font-size: 16px;
+  font-family: Poppins-Medium;
+  /* font-family: "Playfair Display", serif; */
+  text-transform: uppercase;
+  font-weight: 500;
+  background-color: rgb(71, 71, 71);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+.more-accessories button:hover {
+  color: rgb(255, 255, 255);
+  background-color: #ffce34;
+}

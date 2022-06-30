@@ -1,0 +1,14 @@
+.page {
+  height: 80vh;
+  display: flex;
+}
+.search_section {
+  flex: 1;
+  height: 100%;
+  background-color: rgb(228, 194, 194);
+}
+.search_result {
+  flex: 5;
+  height: 100%;
+  background-color: rgb(99, 192, 249);
+}
