@@ -50,11 +50,7 @@ const CartPage = () => {
             {cartItems.map((item) => (
               <div key={item._id} class="Cart-Items">
                 <div class="image-box">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    style={{ height: "120px" }}
-                  />
+                  <img src={item.image} alt={item.name} />
                 </div>
                 <div class="about_cart">
                   <h1 class="title">{item.name}</h1>

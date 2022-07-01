@@ -9,3 +9,11 @@
   justify-content: center;
   padding-bottom: 3%;
 }
+@media (max-width: 700px) {
+  .offices {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    justify-content: space-between;
+  }
+}

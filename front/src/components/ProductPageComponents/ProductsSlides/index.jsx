@@ -43,8 +43,6 @@ const ProductsSlides = () => {
         style={{
           "--swiper-navigation-color": "#000",
           "--swiper-pagination-color": "#000",
-          background: "black",
-          height: "80vh",
         }}
         navigation={true}
         effect={"fade"}

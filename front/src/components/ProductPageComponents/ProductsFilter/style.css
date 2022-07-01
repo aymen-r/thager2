@@ -32,3 +32,22 @@
 .acc-list li:hover {
   background-color: rgb(212, 212, 212);
 }
+
+@media screen and (max-width: 700px) {
+  .top145 {
+    top: 66px !important;
+    position: fixed !important;
+    float: right !important;
+  }
+  .top0 {
+    top: 0;
+  }
+  .top209 {
+    top: 209px !important;
+    position: fixed !important;
+    width: 240px !important;
+  }
+  .filter-title {
+    font-size: 25px !important;
+  }
+}

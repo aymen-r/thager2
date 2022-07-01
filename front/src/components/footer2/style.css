@@ -15,10 +15,13 @@ footer {
 .f-container {
   display: flex;
   padding: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .f-container .f-section {
-  flex-basis: 50%;
+  /* flex-basis: 50%; */
+  width: 30vw;
   padding: 0 20px;
 }
 
@@ -168,13 +171,14 @@ footer {
     padding-bottom: 30px;
   }
 
-  .container {
+  .f-container {
     flex-wrap: wrap;
     flex-direction: column;
     padding: 0.5rem;
   }
 
-  .container .section {
+  .f-container .f-section {
+    width: 100%;
     margin: 5px 0;
   }
 }

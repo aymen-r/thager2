@@ -127,6 +127,7 @@ export default function PersistentDrawerLeft({ page, prods }) {
               noWrap
               component="div"
               sx={{ margin: "0 auto" }}
+              className="filter-title"
             >
               {page.pageTitle}
             </Typography>

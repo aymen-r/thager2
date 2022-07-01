@@ -23,15 +23,23 @@
   margin: 10px 0;
   color: #ffce34;
 }
-
+.cout-icon {
+  font-size: 80px;
+}
 @media (max-width: 700px) {
   .counters .container {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .counters .container > div:nth-of-type(1),
-  .counters .container > div:nth-of-type(2) {
-    border-bottom: 1px lightskyblue solid;
-    padding-bottom: 20px;
+  .cout-icon {
+    font-size: 50px;
+  }
+  .counters h3 {
+    font-size: 15px;
+    font-weight: normal;
+  }
+  .counters .counter {
+    font-size: 25px;
+    margin: 10px 0;
+    color: #ffce34;
   }
 }

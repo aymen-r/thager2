@@ -22,7 +22,7 @@ const CountUpComponent = () => {
           {/* <i className="fab fa-house fa-4x"></i> */}
           {/* <img src="/images-logos/png/001-eco-house.png" alt="" /> */}
 
-          <GiFactory style={{ fontSize: "80px" }} />
+          <GiFactory className="cout-icon" />
           <div className="counter" data-target="60000">
             <CountUp start={isVisible ? null : 0} end={3} duration={2} />
             GW
@@ -30,7 +30,7 @@ const CountUpComponent = () => {
           <h3>GLOBAL MODULE CAPACITY</h3>
         </div>
         <div>
-          <MdOutlineLocalShipping style={{ fontSize: "80px" }} />
+          <MdOutlineLocalShipping className="cout-icon" />
           <div className="counter" data-target="15000">
             <CountUp start={isVisible ? null : 0} end={2} duration={2} /> GW
           </div>
@@ -38,21 +38,21 @@ const CountUpComponent = () => {
         </div>
 
         <div>
-          <MdOutlineAddBusiness style={{ fontSize: "80px" }} />
+          <MdOutlineAddBusiness className="cout-icon" />
           <div className="counter" data-target="5000">
             <CountUp start={isVisible ? null : 0} end={10} duration={2} /> +
           </div>
           <h3>SALES & SERVICE OFFICES</h3>
         </div>
         <div>
-          <IoMdGlobe style={{ fontSize: "80px" }} />
+          <IoMdGlobe className="cout-icon" />
           <div className="counter" data-target="5000">
             <CountUp start={isVisible ? null : 0} end={200} duration={2} />+
           </div>
           <h3>COUNTRIES</h3>
         </div>
         <div>
-          <GiShakingHands style={{ fontSize: "80px" }} />
+          <GiShakingHands className="cout-icon" />
           <div className="counter" data-target="5000">
             <CountUp start={isVisible ? null : 0} end={100} duration={2} /> +
           </div>

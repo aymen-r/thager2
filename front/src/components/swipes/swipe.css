@@ -113,9 +113,9 @@
 }
 
 @media (max-width: 991px) {
-  html {
+  /* html {
     font-size: 55%;
-  }
+  } */
   .header {
     padding: 2rem;
   }
@@ -201,4 +201,83 @@
   border-radius: 25px;
   cursor: pointer;
   transition: 0.5s all ease;
+}
+
+/* responsive */
+@media screen and (max-width: 700px) {
+  .slide {
+    height: 100vh;
+    background-size: cover !important;
+    background-position: top !important;
+    /* background: linear-gradient(to right, #0d00fd48, #ff04046b); */
+  }
+  .slide .content h3 {
+    width: 60%;
+
+    /* color: #fff; */
+  }
+  .content1 img {
+    top: 35%;
+    width: 250px;
+  }
+  .slide2-hd {
+    font-size: 1.5rem;
+  }
+  .slide2-bd {
+    font-size: 1.5rem;
+  }
+  .sl2-hd {
+    top: -20%;
+  }
+  .content2 .sl2-bd {
+    right: 15%;
+    top: 100%;
+  }
+  .animate21 {
+    right: 5%;
+    top: 25% !important;
+    transition: 1s all ease-in-out;
+  }
+  .animate22 {
+    right: 5%;
+    top: 35% !important;
+    transition: 1s all ease-in-out;
+  }
+  #slide-3 {
+    font-family: "Cormorant";
+    font-size: 25px;
+    letter-spacing: 1px;
+    top: 25%;
+
+    width: 70%;
+    line-height: 150%;
+    text-align: center;
+  }
+  #slide4-hd {
+    font-size: 20px;
+    top: 40%;
+    color: #ddd;
+    line-height: 200%;
+  }
+  #slide4-button {
+    top: 55%;
+    width: 45%;
+  }
+  .content5 {
+    margin-bottom: 200px;
+  }
+  #slide5-hd {
+    font-family: "Diplomata SC", cursive;
+    line-height: normal;
+    color: rgb(0, 160, 130);
+    margin-bottom: 10px;
+    font-size: 25px;
+  }
+  #slide5-bd {
+    width: 90%;
+    line-height: 150%;
+    font-size: 20px;
+    font-family: "Arial", cursive;
+    letter-spacing: 2px;
+  }
 }

@@ -1,0 +1,91 @@
+.rs-nav {
+  width: 100vw;
+  position: relative;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.rs-nav span {
+  font-size: 15px;
+}
+.rs-nav .css-ahj2mt-MuiTypography-root {
+  font-size: 15px;
+  font-family: inherit;
+  letter-spacing: inherit;
+}
+.rs-nav .language-item {
+  font-size: 15px;
+}
+
+.res-image img {
+  width: 120px;
+  height: 40px;
+}
+.rs-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* menu */
+.rs-menu {
+  background-color: rgb(63, 63, 63);
+  height: 100vh;
+  width: 80%;
+  position: absolute;
+  top: 66px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.rs-menu-open {
+  transform: translateX(22%);
+  transition: all 0.5s ease;
+}
+
+/* menu list */
+.responsive-menu {
+  width: 90%;
+  margin: 20px 0;
+  padding: 0 20px;
+  list-style: none;
+}
+.responsive-menu-item {
+  font-size: 15px;
+  font-weight: normal;
+  padding: 5px;
+  margin: 0px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.rs-menu-close {
+  right: 0;
+  transform: translateX(100%);
+  transition: all 0.5s ease;
+}
+
+/* inside menu list */
+
+.inner-responsive-menu {
+  list-style: none;
+  margin-left: 20px;
+  text-transform: capitalize;
+  display: none;
+}
+.Prds:hover .inner-responsive-menu {
+  display: block;
+}
+
+.inner-responsive-menu-item {
+  display: flex;
+  text-transform: capitalize;
+}
+
+@media screen and (min-width: 700px) {
+  .rs-nav {
+    display: none;
+  }
+}

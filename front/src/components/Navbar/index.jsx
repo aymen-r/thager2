@@ -26,6 +26,7 @@ import { useContext } from "react";
 import { Store } from "../../Store";
 import { IconButton } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import ResponsiveNav from "./ResponsiveNav/ResponsiveNav";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
@@ -47,7 +48,7 @@ const NavDesktop = () => {
   // reducer part
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const { cart, userInfo } = state;
-  // console.log(cart.cartItems.reduce((a, c) => a + c.quantity, 0));
+
   const signoutHandler = () => {
     ctxDispatch({ type: "USER_SIGNOUT" });
     localStorage.removeItem("userInfo");
@@ -67,6 +68,7 @@ const NavDesktop = () => {
   return (
     <>
       <div className={stick ? "navbar sticky" : "navbar"}>
+        <ResponsiveNav actions={{ userInfo, cart }} />
         <nav className="navbar-one flex">
           <div className="left flex">
             <Link to={"/"}>

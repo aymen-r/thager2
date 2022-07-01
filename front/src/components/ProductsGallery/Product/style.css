@@ -48,3 +48,19 @@
   font-size: 35px;
   font-weight: 600;
 }
+@media screen and (max-width: 700px) {
+  .product {
+    border: 1px solid gray;
+    min-width: 250px;
+    max-width: 400px;
+    height: 300px;
+    margin: 5px;
+  }
+  .actions {
+    height: 20%;
+    font-size: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
