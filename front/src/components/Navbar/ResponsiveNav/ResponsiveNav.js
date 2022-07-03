@@ -2,7 +2,6 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { Store } from "../../../Store";
 import "./responsiveNavbar.css";
-import { IoIosArrowDown } from "react-icons/io";
 
 import Badge from "@mui/material/Badge";
 import {
@@ -194,10 +193,11 @@ const ResponsiveNav = () => {
               </AccordionDetails>
             </Accordion>
           </li>
-
-          <li className="responsive-menu-item">
-            <a href="#s">On the Way</a>
-          </li>
+          <Link to={"/on_the_way"}>
+            <li className="responsive-menu-item">
+              <a href="#s">On the Way</a>
+            </li>
+          </Link>
 
           <li className="responsive-menu-item">
             <Accordion
@@ -221,12 +221,16 @@ const ResponsiveNav = () => {
               </AccordionSummary>
               <AccordionDetails>
                 <Typography>
-                  <div className="inner-responsive-menu-item">
-                    <p>Get an estimate</p>
-                  </div>
-                  <div className="inner-responsive-menu-item">
-                    <p>Track your order</p>
-                  </div>
+                  <Link to={"/get_estimate"}>
+                    <div className="inner-responsive-menu-item">
+                      <p>Get an estimate</p>
+                    </div>
+                  </Link>
+                  <Link to={"/track_order"}>
+                    <div className="inner-responsive-menu-item">
+                      <p>Track your order</p>
+                    </div>
+                  </Link>
                   <div className="inner-responsive-menu-item">
                     <p>Downland data sheet</p>
                   </div>
@@ -234,12 +238,22 @@ const ResponsiveNav = () => {
               </AccordionDetails>
             </Accordion>{" "}
           </li>
-          <li className="responsive-menu-item">
-            <a href="#s">News & Videos</a>
-          </li>
-          <li className="responsive-menu-item">
-            <a href="#s">Contact Us</a>
-          </li>
+          <Link to={"/news_page"}>
+            <li className="responsive-menu-item">
+              <a href="#s">News & Videos</a>
+            </li>
+          </Link>
+          <Link to={"/contact"}>
+            <li className="responsive-menu-item p">
+              <a href="#s">Contact Us</a>
+            </li>
+          </Link>
+
+          <Link to={"/about_us"}>
+            <li className="responsive-menu-item p">
+              <p>About Us</p>
+            </li>
+          </Link>
         </ul>
       </div>
     </div>
