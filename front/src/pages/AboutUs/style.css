@@ -1,0 +1,33 @@
+.aboutus {
+  color: white;
+  margin: 0;
+  padding: 180px 0 0 0;
+  background: radial-gradient(dimgray, black);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.h3 {
+  color: white;
+  font-size: 6.5vw;
+  font-family: Times New Roman, serif;
+  text-shadow: 5px 5px #84764c;
+}
+.para {
+  margin: 5% 0;
+  max-width: 70%;
+  line-height: 200%;
+  font-size: 2vw;
+  text-align: justify;
+}
+
+@media screen and (max-width: 700px) {
+  .aboutus {
+    padding: 20px 0 0 0;
+  }
+  .para {
+    font-size: 3vw;
+  }
+}

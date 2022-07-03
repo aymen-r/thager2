@@ -36,9 +36,9 @@ const Slides = () => {
         slidesPerView={1}
         loop={true}
         speed={1500}
-        // autoplay={{
-        //   disableOnInteraction: false,
-        // }}
+        autoplay={{
+          disableOnInteraction: false,
+        }}
       >
         <SwiperSlide>
           {({ isActive }) => {

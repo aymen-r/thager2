@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Toaster } from "react-hot-toast";
 import "./App.css";
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 
@@ -23,6 +23,12 @@ import Product from "./pages/adminPage2/product/Product";
 import NewProduct from "./pages/adminPage2/newProduct/NewProduct";
 import ProductList from "./pages/adminPage2/productList/ProductList";
 import SearchResultPage from "./pages/SearchResultPage";
+import ContactUs from "./pages/ContactUs";
+import TrackOrder from "./pages/TrackOrder";
+import NewsPage from "./pages/NewsPage";
+import ComingSoon from "./pages/ComingSoon";
+import GetEstimate from "./pages/GetEstimate";
+import AboutUs from "./pages/AboutUs";
 
 const App = () => {
   return (
@@ -44,9 +50,17 @@ const App = () => {
           <Route exact path="/admin_products" element={<ProductList />} />
           <Route exact path="/newproduct" element={<NewProduct />} />
           <Route exact path="/Search" element={<SearchResultPage />} />
+          <Route exact path="/contact" element={<ContactUs />} />
+          <Route exact path="/track_order" element={<TrackOrder />} />
+          <Route exact path="/news_page" element={<NewsPage />} />
+          <Route exact path="/on_the_way" element={<ComingSoon />} />
+          <Route exact path="/get_estimate" element={<GetEstimate />} />
+          <Route exact path="/about_us" element={<AboutUs />} />
+
           {/* <Route exact path="/admin" element={<Admin />} /> */}
         </Routes>
         <ScrollButton />
+        <Toaster position="bottom-center" />
       </Router>
     </>
   );

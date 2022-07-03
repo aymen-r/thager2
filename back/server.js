@@ -9,6 +9,7 @@ import productRouter from "./routes/productRoutes.js";
 import userRouter from "./routes/userRoutes.js";
 import orderRouter from "./routes/orderRoutes.js";
 import path from "path";
+import contactRouter from "./routes/contactsRoutes.js";
 
 dotenv.config();
 
@@ -32,6 +33,7 @@ app.use("/api/seed", seedRouter);
 app.use("/api/products", productRouter);
 app.use("/api/users", userRouter);
 app.use("/api/orders", orderRouter);
+app.use("/api/contact", contactRouter);
 
 app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });

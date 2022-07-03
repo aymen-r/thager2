@@ -79,12 +79,14 @@ const NavDesktop = () => {
           </div>
           <SearchBox />
           <div className="right flex">
-            <div className="nav-link-top flex">
-              <RiProfileLine
-                style={{ fontSize: "30px", color: "#ccc !important" }}
-              />
-              <span>About Us</span>
-            </div>
+            <Link to={"/about_us"}>
+              <div className="nav-link-top flex">
+                <RiProfileLine
+                  style={{ fontSize: "30px", color: "#ccc !important" }}
+                />
+                <span>About Us</span>
+              </div>
+            </Link>
             <div
               className="nav-link-top flex lang"
               onClick={() => setOpen(!open)}
@@ -228,7 +230,7 @@ const NavDesktop = () => {
             </li>
 
             <li className="navbar-item">
-              <a href="#s">ON the Way</a>
+              <Link to={"/on_the_way"}>ON the Way</Link>
             </li>
 
             <li className="navbar-item">
@@ -243,14 +245,18 @@ const NavDesktop = () => {
                   gap: "30px",
                 }}
               >
-                <div className="inner-mega-menu-item">
-                  <img src={estimateImg} alt="" />
-                  <p>Get an estimate</p>
-                </div>
-                <div className="inner-mega-menu-item">
-                  <img src={trackImg} alt="" />
-                  <p>Track your order</p>
-                </div>
+                <Link to={"/get_estimate"}>
+                  <div className="inner-mega-menu-item">
+                    <img src={estimateImg} alt="" />
+                    <p>Get an estimate</p>
+                  </div>
+                </Link>
+                <Link to={"/track_order"}>
+                  <div className="inner-mega-menu-item">
+                    <img src={trackImg} alt="" />
+                    <p>Track your order</p>
+                  </div>
+                </Link>
                 <div className="inner-mega-menu-item">
                   <img src={folderImg} alt="" />
                   <p>Downland data sheet</p>
@@ -258,10 +264,11 @@ const NavDesktop = () => {
               </div>
             </li>
             <li className="navbar-item">
-              <a href="#s">News & Videos</a>
+              <Link to={"/news_page"}>News & Videos</Link>
             </li>
+
             <li className="navbar-item">
-              <a href="#s">Contact Us</a>
+              <Link to={"/contact"}>Contact Us</Link>
             </li>
           </ul>
         </nav>

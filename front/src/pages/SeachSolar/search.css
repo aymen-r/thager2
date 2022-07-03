@@ -1,6 +1,7 @@
 .page {
   height: 80vh;
   display: flex;
+  background: radial-gradient(dimgray, black);
 }
 .search_section {
   flex: 1;
