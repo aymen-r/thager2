@@ -40,7 +40,9 @@ const Product = ({ product }) => {
           style={{ cursor: "pointer" }}
           onClick={() => addToCartHandler(product)}
         />
-        <MdDownloading />
+        <a href="./JA-405W.pdf" download="JA-405W">
+          <MdDownloading />
+        </a>
       </div>
     </div>
   );
