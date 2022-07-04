@@ -22,7 +22,7 @@ const GetEstimate = () => {
     };
     try {
       await axios.post("/api/contact/estimate", info);
-      toast.success("Your demand of an estimate is Sent");
+      toast.success("Your demand of an estimate is Sent", { duration: 4000 });
     } catch (error) {
       toast.error(error);
     }

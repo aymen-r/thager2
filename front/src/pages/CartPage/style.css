@@ -13,6 +13,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .CartContainer {
@@ -146,15 +147,13 @@
 }
 
 .hr_cart {
-  width: 75%;
-  float: right;
-  margin-right: 5%;
+  width: 90%;
+  /* float: right; */
+  margin-top: 2%;
+
+  margin: 2% auto;
 }
-.checkout {
-  float: right;
-  margin-right: 5%;
-  width: 28%;
-}
+
 .total {
   padding-top: 20px;
   width: 100%;
@@ -168,10 +167,11 @@
   color: #202020;
 }
 .items {
-  font-size: 16px;
+  font-size: 18px;
   font-family: "Open Sans";
   font-weight: 500;
   color: #909090;
+  margin-left: 40px;
   line-height: 10px;
 }
 .total-amount {
@@ -180,8 +180,32 @@
   font-weight: 900;
   color: #202020;
 }
+.checkout {
+  /* float: right;
+  margin-right: 5%; 
+  width: 28%;*/
+  width: 90%;
+  margin: auto;
+}
+.checkout h2 {
+  text-align: center;
+  margin: 30px 0 15px 0;
+  text-transform: capitalize;
+}
+.phone_cart {
+  margin: 10px auto;
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  border-radius: 5px;
+  border: #cfcfcf solid 1px;
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
 .button_cart {
-  margin-top: 10px;
+  margin: 10px auto;
   width: 100%;
   height: 40px;
   border: none;
@@ -248,3 +272,5 @@
     width: 48%;
   }
 }
+
+/* quote container */
