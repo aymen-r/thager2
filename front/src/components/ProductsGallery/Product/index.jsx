@@ -2,9 +2,11 @@ import axios from "axios";
 import React, { useContext } from "react";
 import { MdDownloading, MdOutlineAddShoppingCart } from "react-icons/md";
 import { Store } from "../../../Store";
+import { saveAs } from "file-saver";
 import "./style.css";
 
 const Product = ({ product }) => {
+  console.log(product);
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const {
     cart: { cartItems },
@@ -15,14 +17,17 @@ const Product = ({ product }) => {
     const quantity = existItem ? existItem.quantity + 1 : 1;
     const { data } = await axios.get(`/api/products/${item._id}`);
     console.log(data);
-    // if (data.countInStock < quantity) {
-    //   window.alert("Sorry. Product is out of stock");
-    //   return;
-    // }
     ctxDispatch({
       type: "CART_ADD_ITEM",
       payload: { ...item, quantity },
     });
+  };
+
+  const saveFile = () => {
+    saveAs(
+      "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+      "example.pdf"
+    );
   };
   return (
     <div className="product">
@@ -40,7 +45,16 @@ const Product = ({ product }) => {
           style={{ cursor: "pointer" }}
           onClick={() => addToCartHandler(product)}
         />
-        <a href="./JA-405W.pdf" download="JA-405W">
+        <a
+          href={product.doc_url}
+          download
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          {/* <a
+          href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+          download
+        > */}
           <MdDownloading />
         </a>
       </div>

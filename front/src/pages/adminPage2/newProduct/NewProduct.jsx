@@ -1,7 +1,8 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./newProduct.css";
 import { Store } from "../../../Store";
 import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 //  name: { type: String, required: true, unique: true },
 //     watts: { type: String, required: true },
 //     image: { type: String, required: true },
@@ -13,9 +14,23 @@ import axios from "axios";
 //     price: { type: Number },
 
 export default function NewProduct() {
+  const navigate = useNavigate();
   const { state } = useContext(Store);
   const { userInfo } = state;
 
+  useEffect(() => {
+    if (!userInfo) {
+      navigate("/login");
+      return;
+    } else {
+      if (!userInfo.isAdmin) {
+        navigate("/");
+        return;
+      }
+    }
+  }, [navigate, userInfo]);
+
+  const [doc_url, setDoc_url] = useState("");
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [brand, setBrand] = useState("");
@@ -29,6 +44,7 @@ export default function NewProduct() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData();
+    formData.append("doc_url", doc_url);
     formData.append("name", name);
     formData.append("price", price);
     formData.append("brand", brand);
@@ -43,7 +59,6 @@ export default function NewProduct() {
     await axios.post(`/api/products/newProduct`, formData, {
       headers: { Authorization: `Bearer ${userInfo.token}` },
     });
-    console.log(formData);
   };
   return (
     <div className="newProduct">
@@ -66,6 +81,15 @@ export default function NewProduct() {
               placeholder="product name"
               value={name}
               onChange={(e) => setName(e.target.value)}
+            />
+          </div>
+          <div className="addProductItem">
+            <label>pdf URL</label>
+            <input
+              type="text"
+              placeholder="product pdf url"
+              value={doc_url}
+              onChange={(e) => setDoc_url(e.target.value)}
             />
           </div>
           <div className="addProductItem">
@@ -199,7 +223,12 @@ export default function NewProduct() {
               <option value="Veichi">Veichi</option>
             </select> */}
           </div>
-          <button className="addProductButton">Create</button>
+          <div className="actionsbox">
+            <button className="addProductButton">Create</button>
+            <Link to={"/admin_products"}>
+              <button className="cancelProductButton">Cancel</button>
+            </Link>
+          </div>
         </div>
       </form>
     </div>

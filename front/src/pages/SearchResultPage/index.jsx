@@ -1,11 +1,12 @@
-import React, { useEffect, useReducer, useState } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import React, { useEffect, useReducer } from "react";
+import { useNavigate, useLocation, useParams } from "react-router-dom";
 import axios from "axios";
 import Layout from "../../components/Layout";
 import "./style.css";
 import { getError } from "../../utils";
-import Product from "../../components/ProductsGallery/Product";
+
 import ProductsGallery from "../../components/ProductsGallery";
+import Product from "../../components/ProductsGallery/Product";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -29,12 +30,16 @@ const reducer = (state, action) => {
 };
 
 const SearchResultPage = () => {
+  const par = useParams();
   const navigate = useNavigate();
   const { search } = useLocation();
   const sp = new URLSearchParams(search); // /search?category=Shirts
   const query = sp.get("query") || "all";
   const page = sp.get("page") || 1;
-
+  console.log(search);
+  console.log(query);
+  console.log(sp);
+  console.log("par ", par);
   const [{ loading, error, products, pages, countProducts }, dispatch] =
     useReducer(reducer, {
       loading: true,
@@ -59,17 +64,24 @@ const SearchResultPage = () => {
   }, [error, page, query]);
   console.log(products);
 
-  const getFilterUrl = (filter) => {
-    const filterPage = filter.page || page;
-    const filterQuery = filter.query || query;
+  // const getFilterUrl = (filter) => {
+  //   const filterPage = filter.page || page;
+  //   const filterQuery = filter.query || query;
 
-    return `/search?query=${filterQuery}&page=${filterPage}`;
-  };
+  //   return `/search?query=${filterQuery}&page=${filterPage}`;
+  // };
+  products && console.log(products[0].image);
   return (
     <Layout>
       <div className="searchpage">
         <h1>Search result</h1>
+        {/* <img
+          src="/uploads/2022-07-05T07-04-55.507Z-bateria-agm-upower-up-tfs-250ah-12v.jpg"
+          alt=""
+        /> */}
         {countProducts === 0 ? "No" : countProducts} Results
+        {/* {!loading &&
+          products.map((el) => <img src={el.image} key={el._id} alt="uu" />)} */}
         {!loading && <ProductsGallery products={products} />}
       </div>
     </Layout>

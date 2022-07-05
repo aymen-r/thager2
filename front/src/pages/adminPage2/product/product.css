@@ -11,9 +11,9 @@
 
 .productAddButton {
   text-transform: capitalize;
-  width: 180px;
+  width: auto;
   border: none;
-  padding: 10px 5px;
+  padding: 10px 15px;
   background-color: teal;
   color: white;
   border-radius: 5px;
@@ -129,4 +129,18 @@
   color: white;
   font-weight: 600;
   cursor: pointer;
+}
+@media screen and (max-width: 700px) {
+  .productAddButton {
+    text-transform: capitalize;
+    width: auto;
+    border: none;
+    padding: 10px 15px;
+    background-color: teal;
+    color: white;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
 }

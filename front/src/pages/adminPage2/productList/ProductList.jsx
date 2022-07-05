@@ -2,11 +2,12 @@ import "./productList.css";
 import { DataGrid } from "@material-ui/data-grid";
 import { DeleteOutline } from "@material-ui/icons";
 // import { productRows } from "../../dummyData";
-import { Link } from "react-router-dom";
-import React, { useEffect, useReducer, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import React, { useContext, useEffect, useReducer } from "react";
 import logger from "use-reducer-logger";
 import { getError } from "../../../utils";
 import axios from "axios";
+import { Store } from "../../../Store";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -22,29 +23,55 @@ const reducer = (state, action) => {
 };
 
 export default function ProductList() {
+  const navigate = useNavigate();
+  const { state } = useContext(Store);
+  const { userInfo } = state;
   const [{ loading, error, products }, dispatch] = useReducer(logger(reducer), {
     loading: true,
     products: [],
     error: "",
   });
   useEffect(() => {
-    const fetchData = async () => {
-      dispatch({ type: "FETCH_REQUEST" });
-      try {
-        const result = await axios.get("/api/products");
-        dispatch({ type: "FETCH_SUCCESS", payload: result.data });
-      } catch (error) {
-        dispatch({ type: "FETCH_FAIL", payload: getError(error) });
+    if (!userInfo) {
+      navigate("/login");
+      return;
+    } else {
+      if (!userInfo.isAdmin) {
+        navigate("/");
+        return;
+      } else {
+        const fetchData = async () => {
+          dispatch({ type: "FETCH_REQUEST" });
+          try {
+            const result = await axios.get("/api/products");
+            dispatch({ type: "FETCH_SUCCESS", payload: result.data });
+          } catch (error) {
+            dispatch({ type: "FETCH_FAIL", payload: getError(error) });
+          }
+          // setProducts(result.data);
+        };
+        fetchData();
       }
-      // setProducts(result.data);
-    };
-    fetchData();
-  }, []);
+    }
+  }, [navigate, userInfo]);
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     dispatch({ type: "FETCH_REQUEST" });
+  //     try {
+  //       const result = await axios.get("/api/products");
+  //       dispatch({ type: "FETCH_SUCCESS", payload: result.data });
+  //     } catch (error) {
+  //       dispatch({ type: "FETCH_FAIL", payload: getError(error) });
+  //     }
+  //     // setProducts(result.data);
+  //   };
+  //   fetchData();
+  // }, []);
 
   const handleDelete = (id) => {
     products.filter((item) => item._id !== id);
   };
-  console.log(products);
 
   const columns = [
     { field: "_id", headerName: "ID", width: 190 },
@@ -84,9 +111,15 @@ export default function ProductList() {
   return (
     <div className="productList ">
       <h1 className="header-dash">Products List</h1>
-      <Link to={"/newproduct"}>
-        <button className="productAddButton">Create new product</button>{" "}
-      </Link>
+      <div className="actionsbox">
+        <Link to={"/"}>
+          <button className="productAddButton">home</button>{" "}
+        </Link>{" "}
+        <Link to={"/newproduct"}>
+          <button className="productAddButton">Create new product</button>{" "}
+        </Link>
+      </div>
+
       <DataGrid
         rows={products}
         disableSelectionOnClick

@@ -31,10 +31,11 @@ productRouter.post(
     try {
       let filesArray = [];
       req.files.forEach((element) => {
-        filesArray.push(element.path);
+        filesArray.push("/" + element.path);
       });
       const newProduct = new Product({
         name: req.body.name,
+        doc_url: req.body.doc_url,
         image: filesArray[0],
         files: filesArray,
         price: req.body.price,
